@@ -1,24 +1,19 @@
 package br.com.projetoJava;
 
-import br.com.projetoJava.pacote1.ClasseA1;
-import br.com.projetoJava.pacote2.ClasseB1;
-import br.com.projetoJava.pacote3.ClasseC1;
+import br.com.projetoJava.pacote1.Calculadora;
+import br.com.projetoJava.pacote2.Multiplicador;
+import br.com.projetoJava.pacote3.ExecutorOperacoes;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        ClasseA1 a1 =new ClasseA1();
-        ClasseB1 b1 =new ClasseB1();
-        ClasseC1 c1 =new ClasseC1();
+        Calculadora calculadora = new Calculadora();
+        Multiplicador multiplicador = new Multiplicador();
+        ExecutorOperacoes executor = new ExecutorOperacoes(calculadora, multiplicador);
 
-        a1.usarMetodoDeB1();
-        c1.usarMetodoDeA1();
+        int resultado = executor.executarOperacoes(2, 3);
 
-        System.out.println( "Hello World!" );
+        System.out.println(resultado);
     }
 }
